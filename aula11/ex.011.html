@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Países</title>
+</head>
+<body>
+    <h1>Sabendo se você é estrangeiro</h1>
+    País de origem: <input type="text" id="txtpais">
+    <input type="button" value="enviar" onclick="calcular()">
+    <div id="tes"> 
+        
+    </div>
+    <script>
+        function calcular(){
+            var txtpa = document.querySelector('input#txtpais');
+            var tes = document.querySelector('div#tes');
+            var val = String(txtpa.value);
+            tes.innerHTML = `Você é ${val}`;
+            var país = val; // Definindo o país com base no valor inserido
+            console.log(`Vivendo em ${país}`);
+            if(país.toLowerCase() === 'brasil'){ // Convertendo o país para minúsculas para comparar
+                tes.innerHTML += ` Você é brasileiro!`;
+            } else {
+                tes.innerHTML += ` Você é estrangeiro!`;
+            } 
+        }
+    </script>
+</body>
+</html>
